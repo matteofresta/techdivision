@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*===================================================================*/
+
+/*
+    ===========================
+            Analisieren
+    ===========================
+    in diesen teil werden saemtlichen daten ueber die Webseite gesammelt 👾
+ */
+
+:root
+{
+    --clr-primary-900: #1C0A4D;
+    --clr-primary-600: #737FFD;
+    --clr-primary-400: #FA7B67;
+    --clr-primary-200: #FFFFFF;
+
+    --clr-navbar: #31DDB2;
+    --clr-hover-button: #ff8f7e;
+
+    --ff-techdivision: "Montserrat", sans-serif;
+
+    --fs-900: 3.9375rem;
+    --fs-800: 3rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1.125rem;
+    --fs-400: 1rem;
+
+    --fw-700: 700;
+    --fw-600: 600;
+    --fw-400: 400;
+    --fw-300: 300;
+}
+
+/*===================================================================*/
+
+/*
+    ===========================
+            CSS-Reset
+    ===========================
+    Resettierung der CSS Datei :)
+ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-techdivision);
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list']{
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+/*===================================================================*/
+
+/*
+    ===========================
+          CSS-Utilities
+    ===========================
+    Classen die Waerend denn Projekt wichtig sind 🧐
+ */
+
+.text-clr-900 { color: var(--clr-primary-900); }
+.text-clr-600 { color: var(--clr-primary-600); }
+.text-clr-400 { color: var(--clr-primary-400); }
+.text-clr-200 { color: var(--clr-primary-200); }
+
+.bg-clr-900 { background-color: var(--clr-primary-900); }
+.bg-clr-600 { background-color: var(--clr-primary-600); }
+.bg-clr-400 { background-color: var(--clr-primary-400); }
+.bg-clr-200 { background-color: var(--clr-primary-200); }
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+
+.fw-700 { font-weight: 700; }
+.fw-600 { font-weight: 600; }
+.fw-400 { font-weight: 400; }
+.fw-300 { font-weight: 300; }
+
+
+/*===================================================================*/
+
+/*
+    ===========================
+          CSS-Styling
+    ===========================
+    Hier wird die Webseite im leben gebracht 🔥
+ */
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 0.6rem;
+    height: .5rem;
+    background-color: var(--clr-primary-900);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--clr-navbar);
+    min-height: 10px;
+}
+
+.wrapper-nav
+{
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    justify-content: space-between;
+    align-items: center;
+    --gap: 1.5rem;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.wrapper-nav :is(img)
+{
+    width: 14rem;
+}
+
+.wrapper-nav :is(ul)
+{
+    display: flex;
+    gap: var(--gap);
+}
+
+.wrapper-nav :is(i)
+{
+    color: var(--clr-primary-600);
+    margin-right: .5rem;
+}
+
+.wrapper-nav :is(a)
+{
+    text-decoration: none;
+}
+
+.wrapper-nav :is(a):hover
+{
+    color: var(--clr-primary-600);
+}
+
+.extra-navbar
+{
+    display: flex;
+    width: 100%;
+    background-color: var(--clr-primary-900);
+    height: 4rem;
+    --gap: 1.5rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.extra-navbar :is(ul)
+{
+    display: flex;
+    color: var(--clr-primary-200);
+    gap: var(--gap);
+    margin-left: 15%;
+}
+
+.extra-navbar :is(a)
+{
+    position: relative;
+    text-decoration: none;
+}
+
+.extra-navbar :is(a)::after
+{
+    content: '';
+    position: absolute;
+    height: 3px;
+    left: 0;
+    bottom: -.5rem;
+    background-color: var(--clr-primary-200);
+    width: 0;
+    border-radius: .5rem;
+    transition: .5s ease;
+}
+
+.extra-navbar :is(a):hover::after
+{
+    width: 100%;
+    transform-origin: left;
+    transition: .5s ease;
+}
+
+/* ======= Background Header ======= */
+
+
+.wrapper-body
+{
+    width: 100%;
+    height: 50vh;
+}
+
+.wrapper-body :is(img)
+{
+    position: relative;
+    width: 100%;
+    height: 110vh;
+    object-fit: cover;
+    background-position: center;
+    vertical-align: middle;
+}
+
+.inner-col
+{
+    position: absolute;
+    align-self: center;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+}
+
+.inner-col :is(h1)
+{
+    width: 70%;
+}
+
+.inner-col :is(button)
+{
+    padding: 1rem 3rem;
+    background-color: var(--clr-primary-400);
+    border: 2px solid transparent;
+    margin-top: 5rem;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.inner-col :is(button):hover
+{
+    background-color: var(--clr-hover-button);
+    transition: 1s ease;
+    transform: rotateY(360deg);
+    border-radius: .5rem;
+    box-shadow:
+            1.2px 1.9px 2.2px rgba(0, 0, 0, 0.014),
+            2.8px 4.5px 5.3px rgba(0, 0, 0, 0.02),
+            5.3px 8.4px 10px rgba(0, 0, 0, 0.025),
+            9.4px 15px 17.9px rgba(0, 0, 0, 0.03),
+            17.5px 28px 33.4px rgba(0, 0, 0, 0.036),
+            42px 67px 80px rgba(0, 0, 0, 0.05)
+;
+}
+
+
+
