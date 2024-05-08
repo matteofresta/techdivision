@@ -190,7 +190,7 @@ textarea:not([rows]) {
 
 .wrapper-nav :is(img)
 {
-    width: 14rem;
+    width: 12rem;
 }
 
 .wrapper-nav :is(ul)
@@ -265,25 +265,34 @@ textarea:not([rows]) {
 
 .wrapper-body
 {
+    position: relative;
     width: 100%;
-    height: 50vh;
+    height: 110vh;
 }
 
 .wrapper-body :is(img)
 {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 110vh;
     object-fit: cover;
     background-position: center;
     vertical-align: middle;
+    box-shadow:
+            1.8px 4px 2.2px rgba(0, 0, 0, 0.011),
+            4.3px 9.7px 5.3px rgba(0, 0, 0, 0.016),
+            8.1px 18.3px 10px rgba(0, 0, 0, 0.02),
+            14.5px 32.6px 17.9px rgba(0, 0, 0, 0.024),
+            27.2px 61px 33.4px rgba(0, 0, 0, 0.029),
+            65px 146px 80px rgba(0, 0, 0, 0.04)
+;
 }
 
 .inner-col
 {
     position: absolute;
     align-self: center;
-    top: 45%;
+    top: 25%;
     left: 45%;
     transform: translate(-50%, -50%);
 }
@@ -318,6 +327,116 @@ textarea:not([rows]) {
             42px 67px 80px rgba(0, 0, 0, 0.05)
 ;
 }
+
+.wrapper-body-first
+{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    margin-inline: auto;
+    margin-top: 10rem;
+    container-type: inline-size;
+}
+
+.wrapper-body-first .col
+{
+    flex: 1 1;
+}
+
+.wrapper-body-first :is(img)
+{
+    width: 80%;
+    margin-inline: auto;
+    transition: transform .5s ease;
+}
+
+.wrapper-body-first :is(img):hover
+{
+    transition: 1s ease;
+    box-shadow:
+            1.8px 4px 2.2px rgba(0, 0, 0, 0.011),
+            4.3px 9.7px 5.3px rgba(0, 0, 0, 0.016),
+            8.1px 18.3px 10px rgba(0, 0, 0, 0.02),
+            14.5px 32.6px 17.9px rgba(0, 0, 0, 0.024),
+            27.2px 61px 33.4px rgba(0, 0, 0, 0.029),
+            65px 146px 80px rgba(0, 0, 0, 0.04)
+;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+}
+
+.wrapper-body-first :is(h1, h2, p)
+{
+    margin-bottom: 2rem;
+}
+
+.wrapper-body-first :is(h1, h2)
+{
+    width: 60%;
+}
+
+.wrapper-body-leistung .col
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    width: 80%;
+    margin-inline: auto;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wrapper-body-leistung :is(h1, h2)
+{
+    margin-bottom: 2rem;
+}
+
+.wrapper-body-list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.col-sidebar {
+    width: 40%;
+    padding-right: 20px;
+    border-right: 2px solid #eeeeee;
+}
+
+.col-sidebar :is(li)
+{
+    cursor: pointer;
+}
+
+.col-sidebar :is(li):hover
+{
+    font-weight: var(--fw-600);
+}
+
+.col-content {
+    width: 60%;
+    padding-left: 20px;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section h2 {
+    margin-top: 0;
+}
+
+
+
+
 
 
 
