@@ -1,13 +1,23 @@
 function showContent(sectionId) {
-    // Hide all sections
+
     let sections = document.querySelectorAll('.content-section');
     sections.forEach(function (section) {
-        section.style.display = 'none';
-
+        section.classList.remove('active');
     });
 
-    // Show the selected section
     let activeSection = document.getElementById(sectionId);
-    activeSection.style.transition = '.5s ease';
-    activeSection.style.display = 'flex';
+    activeSection.classList.add('active');
+
+    let listItems = document.querySelectorAll('.col-sidebar li');
+    listItems.forEach(function (item) {
+        item.classList.remove('active');
+    });
+
+    let listItem = document.querySelector(`[onmouseover="showContent('${sectionId}')"]`);
+    listItem.classList.add('active');
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    showContent('design');
+});
