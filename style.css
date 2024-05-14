@@ -398,40 +398,73 @@ textarea:not([rows]) {
     justify-content: space-between;
     max-width: 1200px;
     width: 100%;
-    margin: 0 auto;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 20px;
+    margin-top: 5rem;
+    margin-inline: auto;
 }
 
 .col-sidebar {
     width: 40%;
     padding-right: 20px;
-    border-right: 2px solid #eeeeee;
+    transition: .5s ease;
 }
 
 .col-sidebar :is(li)
 {
+    margin-bottom: 2rem;
     cursor: pointer;
 }
 
+[data-active='active']
+{
+    font-weight: var(--fw-700);
+}
 .col-sidebar :is(li):hover
 {
     font-weight: var(--fw-600);
 }
 
 .col-content {
-    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    margin-bottom: 2rem;
     padding-left: 20px;
 }
 
 .content-section {
     display: none;
+    margin-left: 5rem;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    --gap: 2rem;
+    transition: .5s ease;
 }
 
-.content-section h2 {
+.content-section :is(img)
+{
+    align-self: center;
+    justify-self: center;
+    margin-bottom: var(--gap);
+}
+
+.content-section :is(h2, p) {
     margin-top: 0;
+    margin-bottom: var(--gap);
+}
+
+.content-section :is(button)
+{
+    cursor: pointer;
+    margin-top: 4rem;
+    width: 35%;
+    padding: 1rem;
+    background-color: transparent;
+    border: 2px solid var(--clr-primary-400);
 }
 
 
